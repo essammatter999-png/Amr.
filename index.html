@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>نتيجة معادلة كلية الهندسة</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Tahoma,Arial,sans-serif;background:linear-gradient(135deg,#071b35,#123e64,#087e83);color:white;min-height:100vh;text-align:center;padding:25px 12px}
+.container{max-width:700px;margin:25px auto;background:rgba(255,255,255,.97);color:#12304c;padding:25px 18px;border-radius:22px;box-shadow:0 12px 40px #0006}
+h1{color:#087b83;font-size:27px;margin-bottom:10px}
+.subtitle{color:#526579;font-size:17px}
+.student{background:#e8f5f5;padding:17px;border-radius:15px;margin:22px 0;border:2px solid #087e83}
+.student h2{color:#073b62;margin:5px}
+#countdown{font-size:95px;font-weight:bold;color:#e19a20;margin:20px;text-shadow:0 4px 10px #0002}
+#countText{font-size:21px;color:#123e64;font-weight:bold}
+#result{display:none;animation:appear 1.5s ease}
+@keyframes appear{from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+table{width:100%;border-collapse:collapse;margin-top:20px;border-radius:12px;overflow:hidden}
+th{background:#07577a;color:white;padding:14px 8px}
+td{padding:13px 8px;border-bottom:1px solid #ddd;font-size:16px}
+tr:nth-child(even){background:#edf5f7}
+.success{color:#078b43;font-weight:bold}
+.university{margin-top:25px;padding:22px;background:linear-gradient(135deg,#07577a,#078b83);color:white;border-radius:15px}
+.university h2{margin:8px;font-size:25px}
+.final{margin-top:22px;color:#087b42;font-size:24px;font-weight:bold}
+button{background:#087e83;color:white;border:none;padding:13px 25px;font-size:17px;border-radius:10px;cursor:pointer;margin-top:20px}
+button:hover{background:#07577a}
+.footer{margin-top:25px;color:#718096;font-size:13px}
+@media(max-width:420px){h1{font-size:23px}#countdown{font-size:78px}.container{padding:20px 12px}td{font-size:14px}}
+@media print{body{background:white;padding:0}.container{box-shadow:none;margin:0 auto}button{display:none}}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>🎓 نتيجة معادلة كلية الهندسة</h1>
+<p class="subtitle">لحظة إعلان النتيجة المنتظرة</p>
+<div class="student"><p>اسم الطالب</p><h2>عمرو قاسم فتحي</h2></div>
+<div id="countText">استعد لمعرفة النتيجة...</div>
+<div id="countdown">10</div>
+<div id="result">
+<h1>🎉 ألف مبروك النجاح 🎉</h1>
+<p class="subtitle">نتيجة معادلة كلية الهندسة</p>
+<table>
+<thead><tr><th>المادة</th><th>النتيجة</th></tr></thead>
+<tbody>
+<tr><td>اللغة الإنجليزية</td><td class="success">ناجح ✓</td></tr>
+<tr><td>رياضة 1</td><td class="success">ناجح ✓</td></tr>
+<tr><td>رياضة 2</td><td class="success">ناجح ✓</td></tr>
+<tr><td>ميكانيكا</td><td class="success">ناجح ✓</td></tr>
+<tr><td>فيزياء</td><td class="success">ناجح ✓</td></tr>
+<tr><td>كيمياء</td><td class="success">ناجح ✓</td></tr>
+</tbody>
+</table>
+<div class="university"><p>الجامعة المرشح لها</p><h2>جامعة الإسكندرية</h2></div>
+<div class="final">🏆 ناجح في معادلة كلية الهندسة 🏆</div>
+<p>مستقبل مشرق بإذن الله ❤️</p>
+<button onclick="window.print()">طباعة النتيجة</button>
+</div>
+<div class="footer">نتيجة معادلة كلية الهندسة</div>
+</div>
+<script>
+let number=10;
+const countdown=document.getElementById("countdown");
+const countText=document.getElementById("countText");
+const result=document.getElementById("result");
+const timer=setInterval(function(){
+ number--;
+ countdown.textContent=number;
+ if(number===0){
+  clearInterval(timer);
+  countdown.style.display="none";
+  countText.textContent="تم إعلان النتيجة!";
+  result.style.display="block";
+ }
+},1000);
+</script>
+</body>
+</html>
